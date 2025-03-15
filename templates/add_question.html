@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Question</title>
+</head>
+<body>
+    <h1>Add Question</h1>
+    <form method="POST">
+        <label for="question_type">Question Type:</label>
+        <select name="question_type" id="question_type" required>
+            <option value="mcq">MCQ</option>
+            <option value="subjective">Subjective</option>
+        </select><br><br>
+
+        <label for="question_text">Question Text:</label><br>
+        <textarea name="question_text" id="question_text" rows="4" cols="50" required></textarea><br><br>
+
+        <label for="marks">Marks:</label>
+        <input type="number" name="marks" id="marks" required><br><br>
+
+        <div id="mcq_options">
+            <label for="option_a">Option A:</label>
+            <input type="text" name="option_a" id="option_a"><br>
+
+            <label for="option_b">Option B:</label>
+            <input type="text" name="option_b" id="option_b"><br>
+
+            <label for="option_c">Option C:</label>
+            <input type="text" name="option_c" id="option_c"><br>
+
+            <label for="option_d">Option D:</label>
+            <input type="text" name="option_d" id="option_d"><br>
+
+            <label for="correct_answer">Correct Answer (A, B, C, or D):</label>
+            <input type="text" name="correct_answer" id="correct_answer"><br><br>
+        </div>
+
+        <button type="submit">Add Question</button>
+    </form>
+    <a href="{{ url_for('manage_questions') }}">Back to Manage Questions</a>
+</body>
+</html>
